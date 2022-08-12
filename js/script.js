@@ -37,8 +37,10 @@ let carInfo = {
 }
 
 
-let world = 'мир';
-console.log(`Привет-${world}`)
+let world = {
+  sayWorld:'мир'
+}
+console.log(`Привет ${world}`)
 
 
 
