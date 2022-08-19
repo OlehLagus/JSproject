@@ -1,5 +1,14 @@
 "use strict";
 
+let age = prompt('Какое «официальное» название JavaScript?', '');
+
+if (age == ECMAScript) {
+  prompt('Верно!') 
+} else {
+  prompt('Не знаете? ECMAScript!')
+}
+
+
 {
   const nameAdmin = 'Oleh';
   console.log(nameAdmin) //Oleh
@@ -141,3 +150,5 @@ switch(switchProduct) {
     console.log('default')
     break;
 }
+
+
