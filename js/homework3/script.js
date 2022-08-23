@@ -55,10 +55,7 @@ const usersArray = [
  ];
 
 
-  const copyArray = JSON.parse(JSON.stringify(usersArray))
-  console.log(copyArray)
-
-
+ const copyArray = JSON.parse(JSON.stringify(usersArray))
  const getMembers = (members) => {
   let friends = [];
   const flattenMembers = members.map(m => {
@@ -71,16 +68,16 @@ const usersArray = [
   return flattenMembers.concat(friends.length ? getMembers(friends) : friends);
 };
 
-const usersArrayFlat = getMembers(copyArray);
-console.log(usersArrayFlat)
+  const usersArrayFlat = getMembers(copyArray);
+  console.log(usersArrayFlat)
 
 
- //1 Вывести имя самого богатого пользователя
+//1 Вывести имя самого богатого пользователя
 
- const usersRichList = usersArrayFlat.map((elem) => +elem.balance.substring(0, elem.balance.length -1));
- console.log(usersRichList)
+ const usersRichListUsers = usersArray.map((elem) => +elem.balance.substring(0, elem.balance.length -1));
+ console.log(usersRichListUsers)
  
- const maxValueBalance = Math.max.apply(null, usersRichList)
+ const maxValueBalance = Math.max.apply(null, usersRichListUsers)
  console.log(maxValueBalance)
  
  const richestUser = usersArrayFlat.forEach ((element) => {
@@ -89,7 +86,6 @@ console.log(usersArrayFlat)
    }
  }
  ) 
- 
 
 //2. Отсортировать пользователей по имени в алфавитном порядке
 
@@ -109,12 +105,12 @@ console.log(usersSortList)
 //3. Вывести общий баланс пользователей
 
 let arraySum = 0
-usersRichList.forEach((elem) => arraySum += elem)
+usersRichListUsers.forEach((elem) => arraySum += elem)
 console.log(arraySum)
 
 // Второй вариант
 
-const allMoney = usersRichList.reduce((acc, curr) => {
+const allMoney = usersRichListUsers.reduce((acc, curr) => {
   return acc += curr
 }, 0)
 
@@ -123,26 +119,27 @@ console.log(allMoney)
 // Удалить пользователя Russell
 // Удалить пользователя Isaac
 
-const indexForRussell = usersArrayFlat.findIndex(object => {
+const indexForRussell = usersArray.findIndex(object => {
   return object.name === 'Russell'
 });
   
 console.log(indexForRussell)
 
-usersArrayFlat.splice(indexForRussell, 1)
-console.log(usersArrayFlat)
+usersArray.splice(indexForRussell, 1)
+console.log(usersArray)
 
-const indexForIsaac = usersArrayFlat.findIndex(object => {
+const indexForIsaac = usersArray.findIndex(object => {
   return object.name === 'Isaac'
 });
   
 console.log(indexForIsaac)
 
-usersArrayFlat.splice(indexForIsaac, 1)
-console.log(usersArrayFlat)
+usersArray.splice(indexForIsaac, 1)
+console.log(usersArray)
 
 
 //6. Добавить пользователя Harry после John
+
 const indexForJohn =  usersArrayFlat.findIndex(object => {
   return object.name === 'John'
 });
@@ -151,13 +148,11 @@ console.log(indexForJohn)
 usersArrayFlat.splice(indexForJohn+1, 0, {name: 'Harry', balance: '500$'})
 console.log(usersArrayFlat)
 
-
 usersArrayFlat.push({name: 'Conor', balance: '777$'})
 console.log(usersArrayFlat)
 
 
 //8. Вывести массив всех пользователей включая друзей без повторения
-
 
 const filteredArr = usersArrayFlat.reduce((acc, current) => {
   const x = acc.find(item => item.name === current.name);
@@ -173,56 +168,49 @@ console.log(filteredArr)
 
 //9 Вывести массив пользователей у которых баланс больше 2000$
 
-
 const filterRichestUsers = usersArrayFlat.filter ((elem) => (+elem.balance.substring(0, elem.balance.length -1)) > 2000)
 console.log(filterRichestUsers)
 
 
-//10-11
+//10 Вывести имя самого богатого пользователя(включая друзей)
+
+const usersRichList = usersArrayFlat.map((elem) => +elem.balance.substring(0, elem.balance.length -1));
+console.log(usersRichList)
+
+const maxValueBalanceUsers = Math.max.apply(null, usersRichListUsers)
+console.log(maxValueBalance)
+
+const richestUserList = usersArrayFlat.map((element) => {
+  if (element.balance === maxValueBalanceUsers + '$'){
+    console.log(element.name)
+  }
+}
+)
+//11. Найти пользователей с общими друзьями
+
 
 
 //12. Вывести одинаковы ли массивы
 const arr1 = [10, 'a', '5', 5, 1]; 
 const arr2 = [10, 'a', 5, 5, 1];
- 
-console.log(arr1 === arr2)
+
+console.log(JSON.stringify(arr1) === JSON.stringify(arr2)) 
 
 
 //13. вывести true или false в зависимости является ли строка палиндромом "искать такси", "привет мир"
 
 let str = 'искать такси'
-
 let str2 = str.replace(/\s/g,'') 
-
-console.log(str2)
-
 let str3 = str2.split('')
-console.log(str3)
-
 let str3Copy = str3.slice()
-console.log(str3Copy)
-
 const str3CopyRevers = str3Copy.reverse()
-console.log(str3CopyRevers)
-
 console.log(JSON.stringify(str3) === JSON.stringify(str3CopyRevers))
 
 
-
-
 let originalPhrase = 'привет мир'
-
 let originalPhraseNotSpace = originalPhrase.replace(/\s/g,'') 
-
-console.log(originalPhraseNotSpace)
-
 let originalPhraseNotSpaceArray = originalPhraseNotSpace.split('')
-console.log(originalPhraseNotSpaceArray)
-
 let originalPhraseNotSpaceArrayCopy = originalPhraseNotSpaceArray.slice()
-console.log(originalPhraseNotSpaceArrayCopy)
-
 const originalPhraseNotSpaceArrayCopystr3CopyRevers = originalPhraseNotSpaceArrayCopy.reverse()
-console.log(originalPhraseNotSpaceArrayCopystr3CopyRevers)
 
 console.log(JSON.stringify(originalPhraseNotSpaceArrayCopystr3CopyRevers) === JSON.stringify(originalPhraseNotSpaceArray))
