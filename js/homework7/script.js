@@ -1,3 +1,7 @@
+'use strict'
+
+
+
 const user = {
   name: 'Bob',
   sayHi: function () {
@@ -30,7 +34,7 @@ function getPetInf(name, kind, color ) {
   this.color = color
 }
 
-let pet1 = new User("Quick", "chinchilla", "black")
+let pet1 = new getPetInf("Quick", "chinchilla", "black")
 
 console.log(pet1)
 //   name: 'Quick',
