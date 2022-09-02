@@ -47,7 +47,7 @@ console.log(pet1)
 
 function sumDigits(i) {
   i = `${i}`;
-  if( i.length == 1 ) return +i;
+  if(i.length == 1) return +i;
   return +i[0] + sumDigits(i.slice(1));
 }
 
