@@ -2,12 +2,15 @@
 
 
 
-let json = '{"user":"Oleh", "price": "100"}'
+let json = '{"name":"John","cart":[{"price":"1000"},{"price":"2000"}]}'
 
 try {
   let usersInfo = JSON.parse(json);
-  console.log(usersInfo.price)
-  return usersInfo.price
+  console.log(usersInfo)
+  let newArray = usersInfo.cart.flat()
+  console.log(newArray[0])
+
+  // return usersInfo.price[0]
   
 } catch (erorr) {
   console.log(erorr.name)
