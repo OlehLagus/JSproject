@@ -17,16 +17,17 @@ try {
 }
 
 
-const userPrice = {price: 100};
+const userPrice = '{"price": "200"}';
 
-if (userPrice && userPrice.price) {
-  console.log(userPrice.price)
+let userPriceInfo = JSON.parse(userPrice)
+if (userPriceInfo && userPriceInfo.price) {
+  console.log(userPriceInfo.price)
 }
 
 
 
-const userFirstPrice = {price: 100};
-
-if (userFirstPrice?.price) {
-  console.log(userFirstPrice.price)
+const userFirstPrice = '{"price": "300"}';
+let userFirstPriceInfo = JSON.parse(userFirstPrice)
+if (userFirstPriceInfo?.price) {
+  console.log(userFirstPriceInfo.price)
 }
