@@ -52,3 +52,27 @@ function convert(object) {
   }
   
   console.log (convert (map))
+
+// вариант 2 
+
+
+const mapArray = new Map()
+mapArray.set('banana', 1);
+mapArray.set('orange', 2);
+mapArray.set('meat', 4);
+
+
+const obj = { banana: 1, orange: 2, meat: 4 }
+
+
+
+function getInfo (element) {
+   if (element.get) {
+    return Object.fromEntries(element)
+   } else {
+    return new Map(Object.entries(element))
+   }
+    
+}
+
+console.log(getInfo(obj))
