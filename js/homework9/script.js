@@ -27,24 +27,24 @@ console.log(greetUser.get(userJane))
 // 3. Создать функцию по превращению Map в object или object в Map в зависимости от того что было передано в функцию.
 
 
-const map = new Map()
-map.set('banana', 1);
-map.set('orange', 2);
-map.set('meat', 4);
-
-
-const obj = { banana: 1, orange: 2, meat: 4 }
-
-
-
-function getInfo (element) {
-   if (element === map) {
-    return Object.fromEntries(element)
-   } else {
-    return new Map(Object.entries(element))
-   }
+let obj = {
+    name: "John",
+    age: 30
+  };
     
-}
+let map = new Map ([
+    ["price", 500],
+    ["lowPrice", 350],
+    ["salePrice",    50]
+  ]);
 
-console.log(getInfo(obj))
 
+function convert(object) {
+    if (object instanceof Map) {
+         return Object.fromEntries(object)
+    } else {
+        return new Map(Object.entries(object)) 
+    }
+  }
+  
+  console.log (convert (map))
