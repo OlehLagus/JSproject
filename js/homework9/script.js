@@ -16,6 +16,10 @@ console.log(newArrayResult)
 
 
 
+
+const userBob = {name:'Bob'}
+const userJane = {name:'Jane'}
+
 const greetUser = new Map;
 greetUser.set(userBob, "Hello Bob nice to see you")
 greetUser.set(userJane, "How your kids doing Jane?")
