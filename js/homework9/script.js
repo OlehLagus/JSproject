@@ -37,14 +37,14 @@ const obj = { banana: 1, orange: 2, meat: 4 }
 
 
 
-
 function getInfo (element) {
    if (element === map) {
     return Object.fromEntries(element)
-   } else 
+   } else {
     return new Map(Object.entries(element))
-}
+   }
     
+}
 
-console.log(getInfo(map))
+console.log(getInfo(obj))
 
