@@ -39,13 +39,15 @@ console.log(getDates(444844544))
 
 // 3.Создать функцию которая принимает миллисекунды и вернет количество времени которое прошло или должно пройти с текущего момента.
 
-
-function getTime(argument) {
+function getTimer(argument) {
+  const givenTime = new Date (argument)
   const currentTime = new Date()
-  const resultDate = new Date(+currentTime + argument)
-  console.log(currentTime)
-  console.log(resultDate)
-  return resultDate
+  if (givenTime < currentTime) {
+    return currentTime - givenTime
+  } else {
+    return givenTime - currentTime
+  }
+
 }
 
-console.log(getTime(60000))
+console.log(getTimer(1000111111119))
