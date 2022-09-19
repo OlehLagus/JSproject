@@ -20,10 +20,6 @@ console.log(bmw)
 
 //Варіант 2
 
-let car = {
-  rides: true,
-  brake: true
-};
 
 let lamborgini = Object.create(car, {
   verticalDors: {
