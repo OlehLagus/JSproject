@@ -1,6 +1,5 @@
 'use strict'
 
-
 class Car {
   constructor(rides, brake) {
     this.rides = true
@@ -24,23 +23,23 @@ myCarIsSedan
 
 
 
-class premiumSedan extends Sedan {
+class PremiumSedan extends Sedan {
   constructor() {
     super()
     this.price = 'more 100000 USD'
   };
 } 
 
-const myCarIsPremiumSedan = new premiumSedan()
+const myCarIsPremiumSedan = new PremiumSedan()
 myCarIsPremiumSedan
 
 
-class premiumSedanBMW extends premiumSedan {
+class PremiumSedanBMW extends PremiumSedan {
   constructor() {
     super()
     this.engine = 'petrol'
   };
 }
 
-const myCarIsBMW = new premiumSedanBMW()
+const myCarIsBMW = new PremiumSedanBMW()
 myCarIsBMW
