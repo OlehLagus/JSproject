@@ -43,3 +43,4 @@ class PremiumSedanBMW extends PremiumSedan {
 
 const myCarIsBMW = new PremiumSedanBMW()
 myCarIsBMW
+
