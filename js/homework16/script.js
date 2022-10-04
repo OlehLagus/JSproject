@@ -31,10 +31,8 @@
 //Exercise 1
 
 function generateSequence(finish) {
-  console.log(Math.floor(Math.random() * finish));
-
+  return Math.floor(Math.random() * finish);
 }
-
 
 function* getNumber (){
   yield generateSequence(20)
