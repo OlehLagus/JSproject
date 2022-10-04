@@ -50,7 +50,7 @@ function* getNumber (){
 }
 
 for (let num of getNumber()) {
-  num++
+  console.log(num++)
 }
 
 
