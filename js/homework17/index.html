@@ -36,6 +36,12 @@
     let elementTwo = document.querySelectorAll('[data-id="woman"]');
     console.log(elementTwo)
 
+    for (let node of document.body.children[3].childNodes) {
+      if (node.nodeName !== '#text') {
+        continue;
+      }
+    }
+
     let counterVal = 0;
     function incrCounter() {
           updateDisplay(++counterVal);
