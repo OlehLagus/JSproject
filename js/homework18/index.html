@@ -1,0 +1,33 @@
+<html>
+  <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Homework 18</title>
+</head>
+<body>
+  <div id="div"></div>
+
+<script>
+        let age = prompt('Введите текст для проверки');
+        div.className = "alert";
+        div.innerHTML = age
+
+        div.style.color = 'red'
+        div.style.marginTop = '100px'
+        div.style.fontSize = '100px'
+        div.style.textAlign="center"
+        let colors = ['blue', 'yellow', 'green'];
+        let index = 0;
+        function changeColor() {
+        div.style.color = (colors[index++]);
+        index = colors.length;
+}
+        let interval = setInterval(changeColor, 10000);
+
+        setTimeout(() => div.remove(), 30000);
+
+
+</script>
+</body>
+</html>
