@@ -1,0 +1,52 @@
+<html>
+  <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Homework 18</title>
+  <link href="css/style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div id = 'blockFirst'>
+  <button id="firstBtn" onclick="activeClick()">Жми тут!</button>
+  <button id="secondBtn">Все правильно :)</button>
+</div>
+  <div class="blockSecond">
+    <button id ="embarrassedBtn">Приветствую</button>
+  </div>
+
+
+<script>
+  let btnfirst = document.getElementById('firstBtn')
+  let btnSecond = document.getElementById('secondBtn')
+  btnfirst.style.width = '175px';
+  btnfirst.style.height = '100px';
+  btnSecond.style.width = '175px';
+  btnSecond.style.height = '100px';
+  btnSecond.style.backgroundColor ="#808080"
+
+  function activeClick (){
+    if (btnSecond.style.disabled !== 'true'){
+      btnSecond.style.disabled="true";
+      btnSecond.style.backgroundColor ="#808080"
+  } else{
+  	btnSecond.style.disabled ="false";
+    btnSecond.style.backgroundColor ="#2faa20"
+  }
+  }
+
+
+
+  document.getElementById("embarrassedBtn").onmouseover = function() {
+    this.style.backgroundColor = "e34234";
+}
+  document.getElementById("embarrassedBtn").onmouseout = function() {
+    this.style.backgroundColor = "#004DFF";
+}
+
+
+
+
+</script>
+</body>
+</html>
