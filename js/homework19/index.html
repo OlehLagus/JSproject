@@ -15,6 +15,9 @@
     <button id ="embarrassedBtn">Приветствую</button>
   </div>
 
+  <div id="countCliсk" onclick ="getCountLeftClick()" oncontextmenu="getCountLeftClick()">0
+
+  </div>
 
 <script>
   let btnfirst = document.getElementById('firstBtn')
@@ -36,7 +39,6 @@
   }
 
 
-
   document.getElementById("embarrassedBtn").onmouseover = function() {
     this.style.backgroundColor = "e34234";
 }
@@ -44,6 +46,18 @@
     this.style.backgroundColor = "#004DFF";
 }
 
+
+
+
+let counterVal = 0;
+function getCountLeftClick() {
+  updateDisplay(++counterVal)
+}
+
+
+function updateDisplay(val) {
+          document.getElementById("countCliсk").innerHTML = val;
+      }
 
 
 
