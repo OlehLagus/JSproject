@@ -8,7 +8,7 @@
   <link href="css/style.css" rel="stylesheet" type="text/css">
 </head>
 
-<body>
+<body onclick="getCountLeftClick()" oncontextmenu="getCountLeftClick()">
   <div id='blockFirst'>
     <button id="firstBtn" onclick="activeClick()">Жми тут!</button>
     <button id="secondBtn">Все правильно :)</button>
@@ -17,11 +17,11 @@
     <button id="embarrassedBtn">Приветствую</button>
   </div>
 
-  <div id="countCliсk" onclick="getCountLeftClick()" oncontextmenu="getCountLeftClick()">0
+  <div id="countCliсk">0
 
   </div>
 
-  <button class="active-btn" >Active</button>
+  <button class="active-btn">Active</button>
   <button class="passive-btn">Change me</button>
 
   <script>
@@ -43,6 +43,23 @@
       }
     }
 
+    //Второй вариант
+    let activeBtn = document.querySelector('.active-btn');
+    let passiveBtn = document.querySelector('.passive-btn');
+
+
+    activeBtn.onclick = function () {
+      if (passiveBtn.disabled = 'false') {
+        passiveBtn.disabled = 'true'
+        passiveBtn.style.backgroundColor = 'blue'
+        console.log(passiveBtn.disabled)
+      } else {
+        passiveBtn.removeAttribute('disabled');
+        passiveBtn.style.backgroundColor = 'orange';
+
+      }
+    }
+
 
 
     document.getElementById("embarrassedBtn").onmouseover = function () {
@@ -52,21 +69,7 @@
       this.style.backgroundColor = "#004DFF";
     }
 
-    let activeBtn = document.querySelector('.active-btn');
-        let passiveBtn = document.querySelector('.passive-btn');
 
-
- activeBtn.onclick = function () {
-            if (passiveBtn.disabled = 'false') {
-                passiveBtn.disabled = 'true'
-                passiveBtn.style.backgroundColor = 'blue'
-                console.log(passiveBtn.disabled)
-            } else  {
-                passiveBtn.removeAttribute('disabled');
-                passiveBtn.style.backgroundColor = 'orange';
-
-            }
-        }
 
 
     let counterVal = 0;
@@ -78,7 +81,6 @@
     function updateDisplay(val) {
       document.getElementById("countCliсk").innerHTML = val;
     }
-
 
 
   </script>
