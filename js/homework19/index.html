@@ -21,6 +21,9 @@
 
   </div>
 
+  <button class="active-btn" >Active</button>
+  <button class="passive-btn">Change me</button>
+
   <script>
     let btnfirst = document.getElementById('firstBtn')
     let btnSecond = document.getElementById('secondBtn')
@@ -41,6 +44,7 @@
     }
 
 
+
     document.getElementById("embarrassedBtn").onmouseover = function () {
       this.style.backgroundColor = "e34234";
     }
@@ -48,7 +52,21 @@
       this.style.backgroundColor = "#004DFF";
     }
 
+    let activeBtn = document.querySelector('.active-btn');
+        let passiveBtn = document.querySelector('.passive-btn');
 
+
+ activeBtn.onclick = function () {
+            if (passiveBtn.disabled = 'false') {
+                passiveBtn.disabled = 'true'
+                passiveBtn.style.backgroundColor = 'blue'
+                console.log(passiveBtn.disabled)
+            } else  {
+                passiveBtn.removeAttribute('disabled');
+                passiveBtn.style.backgroundColor = 'orange';
+
+            }
+        }
 
 
     let counterVal = 0;
