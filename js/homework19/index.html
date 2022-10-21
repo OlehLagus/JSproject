@@ -8,7 +8,7 @@
   <link href="css/style.css" rel="stylesheet" type="text/css">
 </head>
 
-<body onclick="getCountLeftClick()" oncontextmenu="getCountLeftClick()">
+<body onclick="getCountLeftClick()" oncontextmenu="getCountLeftClick()" contextmenu="return false">
   <div id='blockFirst'>
     <button id="firstBtn" onclick="activeClick()">Жми тут!</button>
     <button id="secondBtn">Все правильно :)</button>
@@ -47,16 +47,16 @@
     let activeBtn = document.querySelector('.active-btn');
     let passiveBtn = document.querySelector('.passive-btn');
 
+    passiveBtn.disabled = 'true'
 
     activeBtn.onclick = function () {
-      if (passiveBtn.disabled = 'false') {
+      if (passiveBtn.disabled === 'false') {
         passiveBtn.disabled = 'true'
         passiveBtn.style.backgroundColor = 'blue'
         console.log(passiveBtn.disabled)
       } else {
-        passiveBtn.removeAttribute('disabled');
+        passiveBtn.disabled ='false';
         passiveBtn.style.backgroundColor = 'orange';
-
       }
     }
 

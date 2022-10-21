@@ -1,0 +1,55 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Homework 20</title>
+  <link href="css/style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+  <div class="square"" ondblclick="getCenter()">
+
+  </div>
+
+  <script>
+    let square = document.querySelector('.square')
+
+    function getCenter() {
+      square.style.backgroundColor = 'red'
+    }
+    
+
+    square.onmousedown = function (event) {
+
+      square.style.position = 'absolute';
+      square.style.zIndex = 1000;
+
+      document.body.append(square);
+      move(event.pageX, event.pageY);
+
+
+      function move(pageX, pageY) {
+        square.style.left = pageX - square.offsetWidth / 2 + 'px';
+        square.style.top = pageY - square.offsetHeight / 2 + 'px';
+      }
+
+      function onMouseMove(event) {
+        move(event.pageX, event.pageY);
+      }
+
+      document.addEventListener('mousemove', onMouseMove);
+
+      square.onmouseup = function () {
+        document.removeEventListener('mousemove', onMouseMove);
+        square.onmouseup = null;
+      };
+
+    };
+
+
+  </script>
+</body>
+
+</html>
