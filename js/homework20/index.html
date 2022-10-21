@@ -9,9 +9,13 @@
 </head>
 
 <body>
-  <div class="square"" ondblclick="getCenter()">
 
+
+  <div class="square">
   </div>
+
+
+
 
   <script>
     let square = document.querySelector('.square')
@@ -28,27 +32,33 @@
       square.style.position = 'absolute';
       square.style.zIndex = 1000;
 
-      document.body.append(square);
-      move(event.pageX, event.pageY);
-
       function move(pageX, pageY) {
         square.style.left = pageX - square.offsetWidth / 2 + 'px';
         square.style.top = pageY - square.offsetHeight / 2 + 'px';
       }
+
+      // document.body.append(square);
+      move(event.pageX, event.pageY);
+
 
       function onMouseMove(event) {
         move(event.pageX, event.pageY);
       }
 
       document.addEventListener('mousemove', onMouseMove);
+      
 
       square.onmouseup = function () {
         document.removeEventListener('mousemove', onMouseMove);
-        square.onmouseup = null;
+        square.ondragstart = null;
       };
     };
+    square.ondragstart = function () {
+      return false;
+    };
+    square.addEventListener('dblclick', getCenter)
 
-
+    
   </script>
 </body>
 
