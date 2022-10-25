@@ -1,0 +1,47 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Homework 21</title>
+</head>
+
+<body>
+
+
+  <form name="form">
+    <p>Введите свой текст</p>
+    <input type="text" name="textValue">
+    <br /><br />
+    <button type="submit">Отправить текст</button>
+  </form>
+  <p id="frashText"></p>
+
+
+
+
+
+
+  <script>
+
+    let form = document.forms.form;
+    let log = document.getElementById('frashText');
+    form.addEventListener('submit', textSub);
+    let textValue = form.elements.textValue
+
+    function textSub() {
+      log.textContent = textValue.value;
+      event.preventDefault();
+    }
+
+
+    log.oncopy = function () {
+      event.clipboardData.setData('text/plain', 'test ' + textValue.value);
+      event.preventDefault();
+    }
+
+  </script>
+</body>
+
+</html>

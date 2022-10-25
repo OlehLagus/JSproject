@@ -25,6 +25,7 @@
       square.style.top = ('50%')
       square.style.left = ('50%')
       square.style.margin = ('-50px 0 0 -50px')
+
     }
 
     square.onmousedown = function (event) {
@@ -36,7 +37,7 @@
         square.style.left = pageX - square.offsetWidth / 2 + 'px';
         square.style.top = pageY - square.offsetHeight / 2 + 'px';
       }
-
+      
       // document.body.append(square);
       move(event.pageX, event.pageY);
 
