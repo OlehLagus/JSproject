@@ -27,8 +27,9 @@
 
     let form = document.forms.form;
     let log = document.getElementById('frashText');
-    form.addEventListener('submit', textSub);
     let textValue = form.elements.textValue
+    form.addEventListener('submit', textSub);
+    
 
     function textSub() {
       log.textContent = textValue.value;
