@@ -1,0 +1,102 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Homework 22</title>
+</head>
+
+<body>
+
+<div class="block">
+  <div class="localStrg">
+    <p class="localStorageHeader">Local Storage</p>
+    <input style="width:200px; height: 60px;" class="areaLocalStrg" >
+    <button class = "localStrgAdd">Добавить</button>
+    <p class="localStrgResult"></p>
+    <button сlass ="localStrgDel" onclick="delLocalStrg()">Удалить</button>
+  </div>
+  
+  <div class="sessionStrg">
+    <p class="sessionStorageHeader">Session Storage</p>
+    <input style="width:200px; height: 60px;" class="areaSessionStrg">
+    <button class = "sessionStrgAdd">Добавить</button>
+    <p class="sessionStrgResult"></p>
+    <button сlass ="sessionStrgDel" onclick="delSessionStrg()">Удалить</button>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+
+let block = document.querySelector('.block')
+block.style.display = 'flex';
+block.style.justifyContent = 'center'
+
+
+let localStrg = document.querySelector('.localStrg')
+let localStrgText = document.querySelector('.areaLocalStrg')
+localStrg.style.marginRight = '50px'
+
+let localStrgAdd = document.querySelector('.localStrgAdd')
+let sessionStrgAdd = document.querySelector('.sessionStrgAdd')
+
+
+
+let sessionStrg = document.querySelector('.sessionStrg')
+let sessionStrgText = document.querySelector('.areaSessionStrg')
+
+
+let localStrgResult = document.querySelector('.localStrgResult')
+let sessionStrgResult = document.querySelector('.sessionStrgResult')
+
+let localStrgDel = document.querySelector('.localStrgDel')
+let sessionStrgDel = document.querySelector('.sessionStrgDel')
+
+
+    localStrgAdd.addEventListener('click', getLocalStrg)
+
+    function getLocalStrg () {
+      localStrgResult.textContent = localStrgText.value;
+      event.preventDefault();
+      // localStorage.keyLocal = JSON.stringify(localStrgText.value)
+      localStorage.setItem('keyLocal', localStrgText.value)
+    }
+
+    sessionStrgAdd.addEventListener('click', getSessionStrg)
+
+    function getSessionStrg () {
+      sessionStrgResult.textContent = sessionStrgText.value;
+      event.preventDefault();
+      sessionStorage.keySession = JSON.stringify(sessionStrgText.value)
+    }
+
+    // localStrgDel.addEventListener('click', delLocalStrg)
+    // sessionStrgDel.addEventListener('click', delSessionStrg)
+
+    function delLocalStrg () {
+      localStorage.removeItem('keyLocal')
+    }
+
+
+    function delSessionStrg () {
+      sessionStorage.removeItem('keySession')
+    }
+
+
+
+  </script>
+</body>
+
+</html>
