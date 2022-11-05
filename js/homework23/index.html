@@ -1,0 +1,59 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="css/style.css" rel="stylesheet" type="text/css">
+  <title>Homework 23</title>
+
+</head>
+
+<body>
+  <div class="validNumber">
+    <p class="validNumberText">Введите номер телефона в формате +380...</p>
+    <input type="text" class="validNumberValue">
+    <br>
+    <button class="validNumberPush">Отправить</button>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script>
+    let validNumberBlock = document.querySelector('.validNumber')
+    let btnValid = document.querySelector('.validNumberPush')
+    let validNumber = document.querySelector('.validNumberValue')
+    let validNumberText = document.querySelector('.validNumberText')
+
+    let reg = /\+380\d{9}\b/g
+
+
+
+    function verifPhone() {
+      console.log(reg.test(validNumber.value))
+      validNumber.value = ''
+    }
+
+    btnValid.addEventListener('click', verifPhone)
+
+    let scr = '<div>Hello</div><span>world</world> '
+
+    let regex = /(\<(\/?[^>]+)>)/ig
+    let result = scr.replace(regex , " ")
+    console.log(result)
+
+
+  </script>
+</body>
+
+</html>
