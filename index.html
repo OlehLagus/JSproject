@@ -1,16 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
+
 <body>
-  
+
   <p>Hello World!</p>
-  <p>Hello World!</p>
-  <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, incidunt! Voluptatibus odit libero placeat officiis dolores non a ipsum nihil, expedita, mollitia cupiditate! Quos quasi libero incidunt tempora, reiciendis dolore.</h1>
-  <script src="js/script.js"></script>
+  <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, incidunt! Voluptatibus odit libero placeat
+    officiis dolores non a ipsum nihil, expedita, mollitia cupiditate! Quos quasi libero incidunt tempora, reiciendis
+    dolore.</h1>
+  <script>
+    const http = require('http');
+
+    const hostname = '127.0.0.1';
+    const port = 4000;
+
+    const server = http.createServer((req, res) => {
+      res.statusCode = 200;
+      res.setHeader('Content-Type', 'text/plain');
+      res.end('Hello World');
+    });
+
+    server.listen(port, hostname, () => {
+      console.log(`Server running at http://${hostname}:${port}/`);
+    });
+  </script>
 </body>
+
 </html>
