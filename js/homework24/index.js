@@ -4,9 +4,6 @@ const port = 4000
 
 let userName = ['Bob', 'Jack', 'Kate', 'Alex']
 
-app.get('/', (req, res) => {
-  res.send('Hello World!')
-})
 app.get('/users', (req, res) => {
   res.send(userName)
 })
