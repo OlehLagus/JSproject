@@ -1,28 +1,20 @@
-const {src, dest, series, parallel, watch} = require ('gulp');
-const del = require('del');
-const browserSync = require('browser-sunc').create();
+const { src, dest, series, parallel, watch } = require('gulp');
+const gulp = require('gulp');
 
-const babel = require('gulp-babel');
 
-const origin = 'src';
-const destination = 'build';
+function html (){
+  return gulp.src('src/index.html')
+    .pipe(gulp.dest('build/'));
+};
 
-// The `clean` function is not exported so it can be considered a private task.
-// It can still be used within the `series()` composition.
-function clean(cb) {
-  // body omitted
-  cb();
+
+
+function css (){
+  return gulp.src('src/css/style.css')
+    .pipe(gulp.dest('build/css'));
 }
 
-// The `build` function is exported so it is public and can be run with the `gulp` command.
-// It can also be used within the `series()` composition.
-function build(cb) {
-  // body omitted
-  cb();
-}
-
-exports.build = build;
-exports.default = series(clean, build);
 
 
 
+exports.build = series(html, css);
