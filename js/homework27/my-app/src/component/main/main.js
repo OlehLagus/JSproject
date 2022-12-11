@@ -77,7 +77,12 @@ function Main() {
     sortArray(sortType);
   }, [sortType]);
 
+  const [listOrder, addOrder] = useState([]);
   
+  function addItem() {
+    addOrder(listOrder.concat('hello'))
+  }
+
   return (
     <div className="container">
       <div className="productCheck">
@@ -86,12 +91,13 @@ function Main() {
           <option value="name">Имя</option>
         </select>
       </div>
-      <div className="choiceProduct"></div>
+      <div className="choiceProduct">{listOrder}</div>
       <div className="productList">
         <div className="productListItem" >
           {data.map(elem => {
             return (
               <Product
+                addItem= {addItem}
                 id={elem.id}
                 name={elem.name}
                 price={elem.price + '$'}
