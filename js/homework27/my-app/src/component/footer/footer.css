@@ -1,0 +1,27 @@
+.styledFooter  {
+  background-color: rgba(0,0,0,0.92);
+}
+
+.styledFooterNav {
+  padding: 20px 0 20px 0;
+}
+
+.styledFooterList {
+  list-style: none;
+  margin-right: 20px;
+  width: 160px;
+  height: 32px;
+}
+
+.styledFooterText {
+  color: white;
+  font-size: 10px;
+  text-decoration: none;
+  background-size: cover;
+  max-width: 40px;
+}
+
+.styledFooterMain  {
+  display: flex;
+  justify-content: center;
+}
