@@ -1,10 +1,7 @@
 
 
 function Product ({ id, name, price, image, addItem}) {
-  // function addItem () {
-  //   let inputList = document.querySelector(".choiceProduct");
-  //   inputList.innerHTML += `${' ' + name}`;
-  // }
+
   return (
     <div className="productItem" key={id} onClick={addItem}>
           <img src={image} alt="" className="productItemImage" />

@@ -8,6 +8,7 @@ import iphone13_green from '../../images/iphone13_green.png';
 import iphone13_blue from '../../images/iphone13_blue.png';
 import iphone13_white from '../../images/iphone13_white.png';
 import Product from "./product";
+import Orders from './order'
 
 
 
@@ -77,10 +78,12 @@ function Main() {
     sortArray(sortType);
   }, [sortType]);
 
-  const [listOrder, addOrder] = useState([]);
+
   
-  function addItem() {
-    addOrder(listOrder.concat('hello'))
+  const [listOrder, setOrder] = useState([]);
+
+  function addItem(elem) {
+    setOrder([...listOrder, elem])
   }
 
   return (
@@ -91,13 +94,21 @@ function Main() {
           <option value="name">Имя</option>
         </select>
       </div>
-      <div className="choiceProduct">{listOrder}</div>
+      {/* <div className="choiceProduct"> */}
+        <Orders orders = {listOrder}/>
+        {/* <div className="choiceProductItem">{listOrder[0]}</div>
+        <div className="choiceProductItem">{listOrder[1]}</div>
+        <div className="choiceProductItem">{listOrder[2]}</div>
+        <div className="choiceProductItem">{listOrder[3]}</div>
+        <div className="choiceProductItem">{listOrder[4]}</div>
+        <div className="choiceProductItem">{listOrder[5]}</div> */}
+      {/* </div> */}
       <div className="productList">
         <div className="productListItem" >
           {data.map(elem => {
             return (
               <Product
-                addItem= {addItem}
+                addItem= {() => addItem(elem)}
                 id={elem.id}
                 name={elem.name}
                 price={elem.price + '$'}

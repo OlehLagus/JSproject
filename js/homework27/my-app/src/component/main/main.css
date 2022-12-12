@@ -46,10 +46,33 @@
 } 
 
 .choiceProduct {
-  height: 50px;
+  display: flex;
+  height: 60px;
   border: 1px solid #aaa;
+  background-color:gray;
 }
 
 .selectItem {
   display: inline-block;
+}
+
+.choiceProductItem {
+  padding-top: 6px;
+  margin-right: 20px;
+  padding-left: 8px;
+  padding-right: 8px;
+  margin-left: 20px;
+
+}
+
+.card {
+  border: 1px solid #aaa;
+  font-size: 10px;
+  font-size: 10px;
+  margin: 2px 20px 2px 20px;
+  padding-left: 2px;
+  padding-right: 2px;
+  background-color: white;
+
+
 }
