@@ -1,4 +1,4 @@
-import React, { useEffect, useState, Component } from "react";
+import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom";
 import './main.css';
 import iphone14_blue from '../../images/iphone14_blue.png';
@@ -7,8 +7,8 @@ import iphone14_black from '../../images/iphone14_black.png';
 import iphone13_green from '../../images/iphone13_green.png';
 import iphone13_blue from '../../images/iphone13_blue.png';
 import iphone13_white from '../../images/iphone13_white.png';
-import Product from "./product";
-import Orders from './order'
+import Product from "./Product";
+import Orders from './Order'
 
 
 
@@ -56,7 +56,6 @@ const product = [
 
 function Main() {
 
-
   const [data, setData] = useState([]);
   const [sortType, setSortType] = useState('price');
 
@@ -94,15 +93,7 @@ function Main() {
           <option value="name">Имя</option>
         </select>
       </div>
-      {/* <div className="choiceProduct"> */}
         <Orders orders = {listOrder}/>
-        {/* <div className="choiceProductItem">{listOrder[0]}</div>
-        <div className="choiceProductItem">{listOrder[1]}</div>
-        <div className="choiceProductItem">{listOrder[2]}</div>
-        <div className="choiceProductItem">{listOrder[3]}</div>
-        <div className="choiceProductItem">{listOrder[4]}</div>
-        <div className="choiceProductItem">{listOrder[5]}</div> */}
-      {/* </div> */}
       <div className="productList">
         <div className="productListItem" >
           {data.map(elem => {

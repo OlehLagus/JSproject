@@ -1,4 +1,4 @@
-import OrderCard from './orderCard'
+import OrderCard from './OrderCard'
 
 function Orders ({orders}) {
   return (

@@ -1,5 +1,3 @@
-
-
 function Product ({ id, name, price, image, addItem}) {
 
   return (
