@@ -1,5 +1,5 @@
 import './header.css';
-
+import LoginForm from "../utility/LoginForm";
 
 
 function Header() {
@@ -7,6 +7,7 @@ function Header() {
   return (
   <div>
     <div className="styledBottomNav">
+    <div><LoginForm /></div>
      <div className="headerLogo">Apple.ua</div>
       <nav className="bottomNav">
       <ul className="styledClearfix">

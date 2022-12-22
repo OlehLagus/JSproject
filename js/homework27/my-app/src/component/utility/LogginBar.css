@@ -1,0 +1,33 @@
+.containerLoggin {
+  width: 100%;
+  height: 460px;
+  background-color: grey;
+}
+
+.logginBar {
+  justify-content: center;
+  padding-top: 120px;
+  display: inline-grid;
+}
+
+.emailLogginForm {
+  border-radius: 10px;
+    width: 320px;
+    height: 40px;
+}
+
+.passLogginForm {
+  border-radius: 10px;
+    width: 320px;
+    height: 40px;
+    margin-top: 10px;
+}
+
+.btnLogginForm {
+  border-radius: 10px;
+  width: 100px;
+  height: 32px;
+  margin-top: 20px;
+  background-color: aqua;
+  
+}

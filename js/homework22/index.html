@@ -70,7 +70,6 @@ let sessionStrgDel = document.querySelector('.sessionStrgDel')
     function getLocalStrg () {
       localStrgResult.textContent = localStrgText.value;
       event.preventDefault();
-      // localStorage.keyLocal = JSON.stringify(localStrgText.value)
       localStorage.setItem('keyLocal', localStrgText.value)
     }
 
@@ -82,17 +81,14 @@ let sessionStrgDel = document.querySelector('.sessionStrgDel')
       sessionStorage.keySession = JSON.stringify(sessionStrgText.value)
     }
 
-    // localStrgDel.addEventListener('click', delLocalStrg)
-    // sessionStrgDel.addEventListener('click', delSessionStrg)
-
-    function delLocalStrg () {
-      localStorage.removeItem('keyLocal')
-    }
+    // function delLocalStrg () {
+    //   localStorage.removeItem('keyLocal')
+    // }
 
 
-    function delSessionStrg () {
-      sessionStorage.removeItem('keySession')
-    }
+    // function delSessionStrg () {
+    //   sessionStorage.removeItem('keySession')
+    // }
 
 
 

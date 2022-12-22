@@ -15,7 +15,7 @@ function CheckIdleTime() {
         oPanel.innerHTML = (IDLE_TIMEOUT - _idleSecondsCounter) + "";
     if (_idleSecondsCounter >= IDLE_TIMEOUT) {
         alert("Time expired!");
-        document.location.href = "logout.html";
+        // document.location.href = "logout.html";
     }
 }
 

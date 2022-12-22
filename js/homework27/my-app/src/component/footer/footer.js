@@ -1,9 +1,11 @@
+import LoginForm from '../utility/LoginForm';
 import './footer.css'
 
 const Footer = () => {
 
   return (
     <div className='styledFooter'>
+      <div>{LoginForm}</div>
       <nav className="styledFooterNav">
         <ul className="styledFooterMain">
           <li className="styledFooterList">
