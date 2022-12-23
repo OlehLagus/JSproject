@@ -1,16 +1,15 @@
 import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom";
-import './main.css';
-import iphone14_blue from '../../images/iphone14_blue.png';
-import iphone14_red from '../../images/iphone14_red.png';
-import iphone14_black from '../../images/iphone14_black.png';
-import iphone13_green from '../../images/iphone13_green.png';
-import iphone13_blue from '../../images/iphone13_blue.png';
-import iphone13_white from '../../images/iphone13_white.png';
+import './Main.css';
+// import images from '../../../public/images'
+// import iphone14_blue from'../../../images/iphone14_blue.png';
+// import iphone14_red from '../../../images/iphone14_red.png';
+// import iphone14_black from'../../../images/iphone14_black.png';
+// import iphone13_green from '../../../images/iphone13_green.png';
+// import iphone13_blue from '../../../images/iphone13_blue.png';
+// import iphone13_white from '../../../images/iphone13_white.png';
 import Product from "./Product";
 import Orders from './Order'
-
-
 
 
 const product = [
@@ -18,48 +17,45 @@ const product = [
     id: 1,
     name: 'Iphone 14 Blue',
     price: 499,
-    image: iphone14_blue
+    image: '/images/iphone14_blue.png'
   },
   {
     id: 2,
     name: 'Iphone 14 Red',
     price: 599,
-    image: iphone14_red
+    image: '/images/iphone14_red.png'
   },
   {
     id: 3,
     name: 'Iphone 14 Black',
     price: 699,
-    image: iphone14_black
+    image: '/images/iphone14_black.png'
   },
   {
     id: 4,
     name: 'Iphone 13 Green',
     price: 399,
-    image: iphone13_green
+    image: '/images/iphone13_green.png'
   },
   {
     id: 5,
     name: 'Iphone 13 Blue',
     price: 450,
-    image: iphone13_blue
+    image: '/images/iphone13_blue.png'
   },
   {
     id: 6,
     name: 'Iphone 13 White',
     price: 520,
-    image: iphone13_white
+    image: '/images/iphone13_white.png'
   }
 ]
 
 
 
-
 function Main() {
-
   const [data, setData] = useState([]);
   const [sortType, setSortType] = useState('price');
-
   useEffect(() => {
     const sortArray = type => {
       const types = {
@@ -79,13 +75,11 @@ function Main() {
   }, [sortType]);
 
 
-  
-  const [listOrder, setOrder] = useState([]);
 
+  const [listOrder, setOrder] = useState([]);
   function addItem(elem) {
     setOrder([...listOrder, elem])
   }
-
   return (
     <div className="container">
       <div className="productCheck">
@@ -94,13 +88,13 @@ function Main() {
           <option value="name">Имя</option>
         </select>
       </div>
-        <Orders orders = {listOrder}/>
+      <Orders orders={listOrder} />
       <div className="productList">
         <div className="productListItem" >
           {data.map(elem => {
             return (
               <Product
-                addItem= {() => addItem(elem)}
+                addItem={() => addItem(elem)}
                 id={elem.id}
                 name={elem.name}
                 price={elem.price + '$'}

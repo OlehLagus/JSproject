@@ -1,5 +1,5 @@
 import LoginForm from '../utility/LoginForm';
-import './footer.css'
+import './Footer.css'
 
 const Footer = () => {
 

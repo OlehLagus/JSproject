@@ -1,5 +1,3 @@
-
-
 function Logged () {
   return (
     <div className="container">

@@ -6,8 +6,6 @@ import {
 const userEmail = 'user@gmail.com';
 const userPass = 'qwerty123';
 
-
-
 function LoginForm () {
   
   const inputEmailValue = useRef(null)
@@ -32,8 +30,6 @@ function LoginForm () {
       <button className="loginFormButton" onClick={setItems}>Войти</button>
     </div>
   )
-
-  
 }
 
 
